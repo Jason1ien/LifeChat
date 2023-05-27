@@ -62,8 +62,8 @@ class MyClient(discord.Client):
         # while the bot is waiting on a response from the model
         # set the its status as typing for user-friendliness
         async with message.channel.typing():
-        response = self.query(payload)
-        bot_response = response.get('generated_text', None)
+            response = self.query(payload)
+            bot_response = response.get('generated_text', None)
         
         # we may get ill-formed response if the model hasn't fully loaded
         # or has timed out
@@ -82,4 +82,4 @@ def main():
     client.run(os.environ['DISCORD_TOKEN'])
 
 if __name__ == '__main__':
-main()
+    main()
